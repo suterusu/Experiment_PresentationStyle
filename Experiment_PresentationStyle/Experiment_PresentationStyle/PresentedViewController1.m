@@ -15,6 +15,9 @@
 
 @implementation PresentationController1
 
+-(CGRect)frameOfPresentedViewInContainerView{
+    
+}
 
 -(BOOL)shouldPresentInFullscreen{
     return NO;
@@ -33,7 +36,7 @@
 
 -(void)awakeFromNib{
     [super awakeFromNib];
-    self.modalPresentationStyle = UIModalPresentationCurrentContext;
+    self.modalPresentationStyle = UIModalPresentationCustom;
     self.transitioningDelegate = self;
 }
 
