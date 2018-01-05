@@ -38,6 +38,8 @@ NS_CLASS_AVAILABLE_IOS(8_0) @interface UIPresentationController : NSObject <UIAp
 
 @property(nonatomic, strong, readonly) UIViewController *presentedViewController;
 
+
+presentedVCのpresentationStyle
 @property(nonatomic, readonly) UIModalPresentationStyle presentationStyle;
 
 // The view in which a presentation occurs. It is an ancestor of both the presenting and presented view controller's views.
@@ -55,12 +57,18 @@ NS_CLASS_AVAILABLE_IOS(8_0) @interface UIPresentationController : NSObject <UIAp
 // implementation for adaptivePresentationStyleForPresentationController:
 #if UIKIT_DEFINE_AS_PROPERTIES
 
-//デリゲートが何も返さない場合。こもpresentationStyleを使用
-//PopUPなどはUIModalPresentationStyleFullscreenを使用
+
+
+
+adaptivePresentationStyleとは？
+横コンパクト環境でのみ使われる、プレゼンテーションスタイル、ポップオーバーとかだとiPhoneだとFullScreenスタイルが適用されるのはこいつのせい（ポップオーバーを担当しているプレゼンテーションコントローラーはこのメソッドでfullScreenを返させる）
+おそらく、デリゲートを使用することにより、これを止めることが出来る(adaptivePresentationStyleForPresentationController:でUIModalPresentationNoneを返す、また調べていないがこれはUIModalPresentationNoneとFull系どちらかしか返せない)
+これが変わるのはサイズクラス変更後、これを呼んでもスタイルが変わったりしないちなみにスタイル変わった結果プレゼンテーションが変わる場合もあるから気をつけて！
 @property(nonatomic, readonly) UIModalPresentationStyle adaptivePresentationStyle;
-#else
 - (UIModalPresentationStyle)adaptivePresentationStyle;
-#endif
+
+
+
 - (UIModalPresentationStyle)adaptivePresentationStyleForTraitCollection:(UITraitCollection *)traitCollection NS_AVAILABLE_IOS(8_3);
 
 - (void)containerViewWillLayoutSubviews;

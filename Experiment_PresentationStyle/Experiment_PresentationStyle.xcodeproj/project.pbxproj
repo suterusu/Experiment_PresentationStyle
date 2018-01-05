@@ -36,6 +36,7 @@
 		085146331FE8BB5C000E8EAC /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		08C807D71FFF656D00C00EF8 /* UIPresantationControllerMemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIPresantationControllerMemo.h; sourceTree = "<group>"; };
 		08C807D81FFF666000C00EF8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		08C807DA1FFF825A00C00EF8 /* UIViewControllerTransitioningMemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIViewControllerTransitioningMemo.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +80,7 @@
 				0851462E1FE8B9CD000E8EAC /* PresentedViewController2.h */,
 				0851462F1FE8B9CD000E8EAC /* PresentedViewController2.m */,
 				08C807D71FFF656D00C00EF8 /* UIPresantationControllerMemo.h */,
+				08C807DA1FFF825A00C00EF8 /* UIViewControllerTransitioningMemo.h */,
 				0851461C1FE8B68D000E8EAC /* Main.storyboard */,
 				0851461F1FE8B68D000E8EAC /* Assets.xcassets */,
 				085146211FE8B68D000E8EAC /* LaunchScreen.storyboard */,
