@@ -1,21 +1,43 @@
 # Experiment_PresentationStyle
 
 
-presentedとは
+モーダル遷移とは   
+用語  
+presentingVC:これを軸に遷移が行われる  
+shouldRemovePresentersViewがYESの時の挙動:こいつは一旦インターフェースから取り除かれ、同じ場所に  containerView(UITransitionView)が入り、その上にpresentedVCのViewが乗っかる(UIModalPresentationFullScreenの挙動  
+shouldRemovePresentersViewがNOの時の挙動:こいつの上にcontainerView(UIデバッグでいうUITransitionView)が入り、その上にpresentedVCのViewが乗っかる(UIModalPresentationOverFullScreenの挙動   
+(これは基本的な挙動であってpresentが二回呼ばれた時などは最初のモーダルで使用したcontainerが使われる場合もある)  
+originalPresentor:メソッド呼ばれた奴  
+presentedVC:メソッドの引数  
+containerViewは基本的に画面全体になりそう(iPadでも！なのでsplitVCで片方のVCをモーダル遷移させるともう片方がタップできなくなる場合もある、回避方法はおそらくあるが)->StoryBoardのContainer Viewを使用+UIModalPresentationCurrentContextでcontainerViewが小さくなるのを確認
 
-あるビューを置き換える(もしくは上に乗っける)  
-presenting関係を作成する  
 
-presenting決定の法則:presentViewControllerを呼び、そのVCのmodalPresentationStyleがCurrentContextなら  
-自身の親ビューを上に進み、definesPresentationContextがYESなものを探し、最初に見つかったものがpresenting  
-それ以外の場合はおそらくrootViewControllerでpresenting、それのpresentingを取り出していき、nilになったやつがpresentingとなる  
 
-presentedのサイズ決定の法則  
-CurrentContext presentingのすべての部分をカバーする様に  
-それ以外、場合によって固定サイズ  
--(CGRect)frameOfPresentedViewInContainerView  
-containerView(実質UIWindow?)座業系のframeを指定、presentingがなんであろうと、Screenから見た位置に乗っかる  
 
--(BOOL)shouldRemovePresentersView  
-YESの場合、presentingをインターフェースから取り除く  
-NOの場合、presentingをインターフェースから取り除かない  
+presentingVC決定の法則:  
+PresentationStyleがUIModalPresentationCurrentContextもしくは  UIModalPresentationCustom+definesPresentationContextがYESの場合(definesPresentationContextは壊れている可能性があり現在それ以外の場合の挙動を行う、Mattもバグって言ってる**iPadのsplitViewでも上手くいか無い。。壊れていると見て間違いない？)  
+originalPresentorが子VCならdefinesPresentationContextを呼んでYESかを調べる  
+それでNOが返ったら親VCのdefinesPresentationContextがYESかを調べるこれを一番親まで続ける  
+最後までNOの場合はrootViewControllerをpresentingしまくったやつ(以後TopViewControllerと呼ぶ)がpresentingVC  
+途中でYESが返った場合はそれがpresentingViewController  
+＊かくにんするのは親子関係のみでモーダル関係はみない＊  
+
+それ以外の場合  
+TopViewController  
+
+
+Custom以外のpresentedVCのviewのサイズ決定について  
+基本的には固定だが、UIModalPresentationCurrentContextのみpresentingVCと同じサイズ  
+
+UIModalPresentationCustomの場合  
+-(CGRect)frameOfPresentedViewInContainerView    
+containerView(presentingVCが何であれ実質スクリーン座標系と思われる iPadのSplitVCでも確認済み)座業系のframeを指定  
+
+
+
+-(BOOL)shouldRemovePresentersView    
+YESの場合、presentingをインターフェースから取り除く    
+NOの場合、presentingをインターフェースから取り除かない    
+
+-(BOOL)definesPresentationContext  
+現状壊れている可能性が高くpresentingVC決定法則が使え無い  
