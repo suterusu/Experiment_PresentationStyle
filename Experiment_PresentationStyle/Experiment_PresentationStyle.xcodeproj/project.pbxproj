@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0831DAC82001C2A200A2671A /* NavigationControllerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0831DAC72001C2A200A2671A /* NavigationControllerView.m */; };
+		0831DACA2001E55D00A2671A /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 0831DAC92001E55D00A2671A /* README.md */; };
 		085146151FE8B68D000E8EAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 085146141FE8B68D000E8EAC /* main.m */; };
 		085146181FE8B68D000E8EAC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 085146171FE8B68D000E8EAC /* AppDelegate.m */; };
 		0851461B1FE8B68D000E8EAC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0851461A1FE8B68D000E8EAC /* ViewController.m */; };
@@ -16,12 +17,12 @@
 		085146231FE8B68D000E8EAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 085146211FE8B68D000E8EAC /* LaunchScreen.storyboard */; };
 		0851462D1FE8B9AC000E8EAC /* PresentedViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 0851462C1FE8B9AC000E8EAC /* PresentedViewController1.m */; };
 		085146311FE8B9CD000E8EAC /* PresentedViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 0851462F1FE8B9CD000E8EAC /* PresentedViewController2.m */; };
-		08C807D91FFF666000C00EF8 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 08C807D81FFF666000C00EF8 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0831DAC62001C2A200A2671A /* NavigationControllerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationControllerView.h; sourceTree = "<group>"; };
 		0831DAC72001C2A200A2671A /* NavigationControllerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationControllerView.m; sourceTree = "<group>"; };
+		0831DAC92001E55D00A2671A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 		085146101FE8B68D000E8EAC /* Experiment_PresentationStyle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Experiment_PresentationStyle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		085146141FE8B68D000E8EAC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		085146161FE8B68D000E8EAC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -38,7 +39,6 @@
 		0851462F1FE8B9CD000E8EAC /* PresentedViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentedViewController2.m; sourceTree = "<group>"; };
 		085146331FE8BB5C000E8EAC /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		08C807D71FFF656D00C00EF8 /* UIPresantationControllerMemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIPresantationControllerMemo.h; sourceTree = "<group>"; };
-		08C807D81FFF666000C00EF8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		08C807DA1FFF825A00C00EF8 /* UIViewControllerTransitioningMemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIViewControllerTransitioningMemo.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,7 +56,6 @@
 		085146071FE8B68D000E8EAC = {
 			isa = PBXGroup;
 			children = (
-				08C807D81FFF666000C00EF8 /* README.md */,
 				085146121FE8B68D000E8EAC /* Experiment_PresentationStyle */,
 				085146111FE8B68D000E8EAC /* Products */,
 			);
@@ -73,6 +72,7 @@
 		085146121FE8B68D000E8EAC /* Experiment_PresentationStyle */ = {
 			isa = PBXGroup;
 			children = (
+				0831DAC92001E55D00A2671A /* README.md */,
 				085146331FE8BB5C000E8EAC /* PrefixHeader.pch */,
 				085146161FE8B68D000E8EAC /* AppDelegate.h */,
 				085146171FE8B68D000E8EAC /* AppDelegate.m */,
@@ -175,10 +175,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08C807D91FFF666000C00EF8 /* README.md in Sources */,
 				0851461B1FE8B68D000E8EAC /* ViewController.m in Sources */,
 				085146181FE8B68D000E8EAC /* AppDelegate.m in Sources */,
 				0831DAC82001C2A200A2671A /* NavigationControllerView.m in Sources */,
+				0831DACA2001E55D00A2671A /* README.md in Sources */,
 				085146151FE8B68D000E8EAC /* main.m in Sources */,
 				0851462D1FE8B9AC000E8EAC /* PresentedViewController1.m in Sources */,
 				085146311FE8B9CD000E8EAC /* PresentedViewController2.m in Sources */,
