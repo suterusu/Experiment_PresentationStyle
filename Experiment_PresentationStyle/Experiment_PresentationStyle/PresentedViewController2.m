@@ -16,13 +16,15 @@
 
 @implementation PresentationController2
 
--(CGRect)frameOfPresentedViewInContainerView{
-    return CGRectMake(10, 10, 40, 30);
-}
 
 -(BOOL)shouldPresentInFullscreen{
     return NO;
 }
+
+-(BOOL)shouldRemovePresentersView{
+    return NO;
+}
+
 
 
 
@@ -42,8 +44,17 @@
 
 -(void)awakeFromNib{
     [super awakeFromNib];
-    self.modalPresentationStyle = UIModalPresentationCurrentContext;
+    self.modalPresentationStyle = UIModalPresentationOverCurrentContext;
     self.transitioningDelegate = self;
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    self.presentationController.containerView.userInteractionEnabled = YES;
+}
+
+-(BOOL)definesPresentationContext{
+    return YES;
 }
 
 -(UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source{
@@ -59,6 +70,10 @@
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     UIViewController *aa = self.presentingViewController;
+    UIViewController *aa2 = [UIApplication sharedApplication].keyWindow.rootViewController;
+    
+    
+    
     NSInteger a = 4;
     a++;
     

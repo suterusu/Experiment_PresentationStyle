@@ -15,43 +15,64 @@
 
 @implementation PresentationController1
 
--(CGRect)frameOfPresentedViewInContainerView{
-    
-}
+
+
 
 -(BOOL)shouldPresentInFullscreen{
     return NO;
 }
 
-
-
-@end
-
-
-@interface PresentedViewController1 ()<UIViewControllerTransitioningDelegate>
+-(BOOL)shouldRemovePresentersView{
+    return NO;
+}
 
 @end
 
-@implementation PresentedViewController1
+
+@interface PresentedViewController1 ()<UIViewControllerTransitioningDelegate,UIAdaptivePresentationControllerDelegate>
+
+@end
+
+@implementation PresentedViewController1{
+    PresentationController1 *aaa;
+}
+
 
 -(void)awakeFromNib{
     [super awakeFromNib];
-    self.modalPresentationStyle = UIModalPresentationCustom;
+    self.modalPresentationStyle = UIModalPresentationOverCurrentContext;
     self.transitioningDelegate = self;
 }
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+        self.presentationController.containerView.userInteractionEnabled = YES;
+}
+
+- (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller traitCollection:(UITraitCollection *)traitCollection{
+    return UIModalPresentationNone;
+}
+
+-(BOOL)definesPresentationContext{
+    return YES;
+}
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
 
--(BOOL)definesPresentationContext{
-    return NO;
-}
+
+
 
 -(UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source{
-    
-    return [[PresentationController1 alloc]initWithPresentedViewController:presented presentingViewController:presenting];
+    PresentationController1 *aa =  [[PresentationController1 alloc]initWithPresentedViewController:presented presentingViewController:presenting];
+    aaa = aa;
+    aa.delegate = self
+    ;
+    return aa;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0831DAC82001C2A200A2671A /* NavigationControllerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0831DAC72001C2A200A2671A /* NavigationControllerView.m */; };
 		085146151FE8B68D000E8EAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 085146141FE8B68D000E8EAC /* main.m */; };
 		085146181FE8B68D000E8EAC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 085146171FE8B68D000E8EAC /* AppDelegate.m */; };
 		0851461B1FE8B68D000E8EAC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0851461A1FE8B68D000E8EAC /* ViewController.m */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0831DAC62001C2A200A2671A /* NavigationControllerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationControllerView.h; sourceTree = "<group>"; };
+		0831DAC72001C2A200A2671A /* NavigationControllerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationControllerView.m; sourceTree = "<group>"; };
 		085146101FE8B68D000E8EAC /* Experiment_PresentationStyle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Experiment_PresentationStyle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		085146141FE8B68D000E8EAC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		085146161FE8B68D000E8EAC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -73,6 +76,8 @@
 				085146331FE8BB5C000E8EAC /* PrefixHeader.pch */,
 				085146161FE8B68D000E8EAC /* AppDelegate.h */,
 				085146171FE8B68D000E8EAC /* AppDelegate.m */,
+				0831DAC62001C2A200A2671A /* NavigationControllerView.h */,
+				0831DAC72001C2A200A2671A /* NavigationControllerView.m */,
 				085146191FE8B68D000E8EAC /* ViewController.h */,
 				0851461A1FE8B68D000E8EAC /* ViewController.m */,
 				0851462B1FE8B9AC000E8EAC /* PresentedViewController1.h */,
@@ -173,6 +178,7 @@
 				08C807D91FFF666000C00EF8 /* README.md in Sources */,
 				0851461B1FE8B68D000E8EAC /* ViewController.m in Sources */,
 				085146181FE8B68D000E8EAC /* AppDelegate.m in Sources */,
+				0831DAC82001C2A200A2671A /* NavigationControllerView.m in Sources */,
 				085146151FE8B68D000E8EAC /* main.m in Sources */,
 				0851462D1FE8B9AC000E8EAC /* PresentedViewController1.m in Sources */,
 				085146311FE8B9CD000E8EAC /* PresentedViewController2.m in Sources */,

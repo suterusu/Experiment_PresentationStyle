@@ -45,6 +45,8 @@ presentedVCのpresentationStyle
 // The view in which a presentation occurs. It is an ancestor of both the presenting and presented view controller's views.
 // This view is being passed to the animation controller.
 //presentingVC.viewのサイズと同じと思われる
+//おそらく、presentedが表示されている間常にアクセスが出来、何か装飾したい場合はこれを使う
+//また、UIViewControllerAnimatedTransitioningもコンテキスト(上のでかいあれ)からアクセス可能
 @property(nullable, nonatomic, readonly, strong) UIView *containerView;
 
 @property(nullable, nonatomic, weak) id <UIAdaptivePresentationControllerDelegate> delegate;
@@ -81,6 +83,7 @@ adaptivePresentationStyleとは？
 /*
 NOの場合UIModalPresentationCurrentContextになる
 つまり、presentingVCに覆いかぶさるようになる presentingVCの確認はREADMEを確認
+ ただ、現在壊れている可能性が高い
  */
 @property(nonatomic, readonly) BOOL shouldPresentInFullscreen;
 
